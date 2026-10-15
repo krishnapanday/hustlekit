@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HustleKit - AI Seller Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h2>✦ HustleKit</h2>
+    <span>Local-first Seller Studio</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR SMALL BUSINESS SIDEKICK</p>
+      <h1>Turn products into <span>sales-ready listings.</span></h1>
+      <p>Create product descriptions and keywords in seconds.</p>
+    </section>
+
+    <div class="workspace">
+      <section class="card">
+        <h2>01. Product details</h2>
+
+        <form id="listingForm">
+          <label for="productName">Product name *</label>
+          <input id="productName" required
+            placeholder="e.g. Handmade lavender candle">
+
+          <label for="category">Category</label>
+          <select id="category">
+            <option>Home & Living</option>
+            <option>Fashion & Accessories</option>
+            <option>Art & Handmade</option>
+            <option>Beauty & Wellness</option>
+            <option>Digital Product</option>
+            <option>Other</option>
+          </select>
+
+          <label for="platform">Selling platform</label>
+          <select id="platform">
+            <option>Etsy</option>
+            <option>Instagram</option>
+            <option>Shopify</option>
+            <option>eBay</option>
+          </select>
+
+          <label for="details">Product details</label>
+          <textarea id="details" rows="4"
+            placeholder="Materials, benefits, size, special features..."></textarea>
+
+          <label for="keywords">Keywords (comma separated)</label>
+          <input id="keywords"
+            placeholder="handmade, gift, eco-friendly">
+
+          <label for="tone">Writing style</label>
+          <select id="tone">
+            <option value="warm">Warm and friendly</option>
+            <option value="premium">Premium and elegant</option>
+            <option value="playful">Playful and bold</option>
+            <option value="minimal">Clear and minimal</option>
+          </select>
+
+          <button class="generate-btn" type="submit">
+            ✦ Generate Listing
+          </button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="result-heading">
+          <h2>02. Your listing</h2>
+          <span id="status">Ready</span>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">✦</div>
+          <h3>Your next listing starts here.</h3>
+          <p>Enter product details to create your draft.</p>
+        </div>
+
+        <div id="results" hidden>
+          <label for="resultTitle">Product title</label>
+          <textarea id="resultTitle" rows="2"></textarea>
+          <button class="small-btn" data-copy="resultTitle">Copy title</button>
+
+          <label for="resultDescription">Description</label>
+          <textarea id="resultDescription" rows="10"></textarea>
+          <button class="small-btn" data-copy="resultDescription">
+            Copy description
+          </button>
+
+          <label>Suggested tags</label>
+          <div id="resultTags" class="tags"></div>
+
+          <div class="actions">
+            <button id="saveBtn" class="secondary-btn">♡ Save draft</button>
+            <button id="copyAllBtn" class="generate-btn">Copy all</button>
+          </div>
+
+          <p class="notice">
+            Demo mode: this version uses JavaScript templates,
+            not a real AI model.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="card saved-section">
+      <div class="result-heading">
+        <h2>Saved drafts</h2>
+        <button id="clearSaved" class="small-btn">Clear all</button>
+      </div>
+      <div id="savedDrafts">
+        <p class="muted">Your saved drafts will appear here.</p>
+      </div>
+    </section>
+
+    <footer>
+      Built for independent sellers. Open tools, small business. ✦
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
